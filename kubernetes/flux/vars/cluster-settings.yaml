@@ -7,4 +7,4 @@ metadata:
 data:
   TIMEZONE: "Australia/Sydney"
   CLUSTER_CIDR: "10.69.0.0/16"
-  NODE_CIDR: "172.20.24.0/24"
+  NODE_CIDR: "172.20.22.0/24"
