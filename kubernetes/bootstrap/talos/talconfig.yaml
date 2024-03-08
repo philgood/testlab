@@ -22,7 +22,9 @@ nodes:
   - hostname: "master01"
     ipAddress: "172.20.22.9"
     installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
+    machineSpec:
+      secureboot: true
+    talosImageURL: factory.talos.dev/installer-secureboot/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
@@ -38,7 +40,9 @@ nodes:
   - hostname: "master02"
     ipAddress: "172.20.22.10"
     installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
+    machineSpec:
+      secureboot: true
+    talosImageURL: factory.talos.dev/installer-secureboot/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
@@ -54,7 +58,9 @@ nodes:
   - hostname: "master03"
     ipAddress: "172.20.22.11"
     installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
+    machineSpec:
+      secureboot: true
+    talosImageURL: factory.talos.dev/installer-secureboot/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
@@ -154,6 +160,20 @@ patches:
         extraKernelArgs:
           - net.ifnames=0
 
+  # Encrypt system disk with TPM
+  - |-
+    machine:
+      systemDiskEncryption:
+        ephemeral:
+          provider: luks2
+          keys:
+            - slot: 0
+              tpm: {}
+        state:
+          provider: luks2
+          keys:
+            - slot: 0
+              tpm: {}
 
 controlPlane:
   patches:
