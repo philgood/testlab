@@ -6,13 +6,13 @@ talosVersion: v1.6.5
 kubernetesVersion: v1.29.2
 
 clusterName: &cluster home-kubernetes
-endpoint: https://172.20.22.12:6443
+endpoint: https://172.20.24.12:6443
 clusterPodNets:
   - "10.69.0.0/16"
 clusterSvcNets:
   - "10.96.0.0/16"
 additionalApiServerCertSans: &sans
-  - "172.20.22.12"
+  - "172.20.24.12"
   - 127.0.0.1 # KubePrism
 additionalMachineCertSans: *sans
 cniConfig:
@@ -20,53 +20,53 @@ cniConfig:
 
 nodes:
   - hostname: "master01"
-    ipAddress: "172.20.22.9"
-    installDisk: "/dev/sda"
+    ipAddress: "172.20.24.9"
+    installDisk: "/dev/vda"
     talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
         dhcp: false
         addresses:
-          - "172.20.22.9/24"
+          - "172.20.24.9/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
-            gateway: "172.20.22.1"
+            gateway: "172.20.24.1"
         vip:
-          ip: "172.20.22.12"
+          ip: "172.20.24.12"
   - hostname: "master02"
-    ipAddress: "172.20.22.10"
-    installDisk: "/dev/sda"
+    ipAddress: "172.20.24.10"
+    installDisk: "/dev/vda"
     talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
         dhcp: false
         addresses:
-          - "172.20.22.10/24"
+          - "172.20.24.10/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
-            gateway: "172.20.22.1"
+            gateway: "172.20.24.1"
         vip:
-          ip: "172.20.22.12"
+          ip: "172.20.24.12"
   - hostname: "master03"
-    ipAddress: "172.20.22.11"
-    installDisk: "/dev/sda"
+    ipAddress: "172.20.24.11"
+    installDisk: "/dev/vda"
     talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - interface: eth0
         dhcp: false
         addresses:
-          - "172.20.22.11/24"
+          - "172.20.24.11/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
-            gateway: "172.20.22.1"
+            gateway: "172.20.24.1"
         vip:
-          ip: "172.20.22.12"
+          ip: "172.20.24.12"
 
 patches:
   # Configure containerd
@@ -110,7 +110,7 @@ patches:
           rotate-server-certificates: true
         nodeIP:
           validSubnets:
-            - "172.20.22.0/24"
+            - "172.20.24.0/24"
 
   # Force nameserver
   - |-
@@ -177,7 +177,7 @@ controlPlane:
           extraArgs:
             listen-metrics-urls: http://0.0.0.0:2381
           advertisedSubnets:
-            - "172.20.22.0/24"
+            - "172.20.24.0/24"
 
     # Disable default API server admission plugins.
     - |-
