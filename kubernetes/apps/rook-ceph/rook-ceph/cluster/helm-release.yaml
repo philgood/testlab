@@ -24,7 +24,7 @@ spec:
   install:
     createNamespace: true
     remediation:
-      retries: 3 
+      retries: 3
   upgrade:
     cleanupOnFail: false
     remediation:
@@ -50,7 +50,7 @@ spec:
       dashboard:
         ingressClassName: nginx
         host:
-          name: &host rook.${SECRET_DOMAIN}
+          name: &host rook.narden.au #${SECRET_DOMAIN}
           path: "/"
         tls:
           - hosts:
