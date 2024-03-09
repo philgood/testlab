@@ -4,7 +4,8 @@ kind: HelmRelease
 metadata:
   name: &app rook-ceph-cluster
 spec:
-  interval: 10m
+  timeout: 5m0s
+  interval: 10m0s
   chart:
     spec:
       chart: *app
