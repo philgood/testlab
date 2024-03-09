@@ -48,7 +48,7 @@ spec:
 
     ingress:
       dashboard:
-        ingressClassName: nginx
+        ingressClassName: "internal"
         host:
           name: &host rook.narden.au #${SECRET_DOMAIN}
           path: "/"
