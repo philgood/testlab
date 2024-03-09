@@ -23,7 +23,7 @@ spec:
   install:
     createNamespace: true
     remediation:
-      retries: 3
+      retries: 3 
   upgrade:
     cleanupOnFail: false
     remediation:
