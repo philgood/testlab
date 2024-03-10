@@ -41,7 +41,7 @@ spec:
   wait: false
   interval: 30m
   retryInterval: 1m
-  timeout: 5m
+  timeout: 10m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
