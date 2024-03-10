@@ -106,7 +106,7 @@ spec:
 
     ingress:
       dashboard:
-        ingressClassName: internal
+        ingressClassName: "internal"
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           hajimari.io/appName: Rook
