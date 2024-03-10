@@ -14,7 +14,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: home-ops-kubernetes
+    name: home-kubernetes
   wait: false
   interval: 30m
   retryInterval: 1m
@@ -41,7 +41,7 @@ spec:
   prune: false
   sourceRef:
     kind: GitRepository
-    name: home-ops-kubernetes
+    name: home-kubernetes
   wait: false
   interval: 30m
   retryInterval: 1m
@@ -68,7 +68,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: home-ops-kubernetes
+    name: home-kubernetes
   wait: false
   interval: 30m
   retryInterval: 1m
