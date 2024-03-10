@@ -106,10 +106,11 @@ spec:
 
     ingress:
       dashboard:
-        ingressClassName: "internal"
+        ingressClassName: internal
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-          hajimari.io/icon: fa6-solid:chess-rook
+          hajimari.io/appName: Rook
+          hajimari.io/icon: mdi:chess-rook
           #hajimari.io/enable: true
         host:
           name: &host rook.${SECRET_DOMAIN}
