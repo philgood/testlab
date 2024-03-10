@@ -14,4 +14,4 @@ resources:
   - ./stakater.yaml
   - ./xenitab.yaml
   - ./rook-ceph.yaml
-  - ./haijmari.yaml
+  - ./hajimari.yaml
