@@ -46,7 +46,7 @@ spec:
         annotations:
           hajimari.io/enable: "false"
         hosts:
-          - host: &host "hajimari.narden.au"
+          - host: &host "hajimari.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
