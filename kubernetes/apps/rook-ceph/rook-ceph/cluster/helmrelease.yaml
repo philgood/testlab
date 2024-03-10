@@ -110,8 +110,8 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           hajimari.io/enable: "true"
-          hajimari.io/appName: Rook
-          hajimari.io/icon: mdi:chess-rook
+          hajimari.io/appName: "Rook"
+          hajimari.io/icon: "mdi:chess-rook"
         host:
           name: &host rook.${SECRET_DOMAIN}
           path: "/"
