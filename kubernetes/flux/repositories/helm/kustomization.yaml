@@ -11,3 +11,7 @@ resources:
   - ./stakater.yaml
   - ./xenitab.yaml
   - ./rook-ceph.yaml
+  - ./hajimari.yaml
+  - ./ingress-nginx.yaml
+  - ./external-dns.yaml
+  - ./k8s-gateway.yaml
